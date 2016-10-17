@@ -786,8 +786,9 @@
 
   \debug{Format}%
   % Set default for columns if unset (4 for landscape, 3 for portrait)
+  % Mirko's change: default = 2 for portrait poster
   \ifthenelse{\equal{\baposter@columns}{}}{%
-    \renewcommand{\baposter@columns}{\if@landscape4\else3\fi}%
+    \renewcommand{\baposter@columns}{\if@landscape4\else2\fi}%
   }{}
 %
   \debug{Columns: \baposter@columns}%
