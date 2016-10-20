@@ -21,8 +21,12 @@
 \documentclass[a0paper,portrait]{baposter}
 
 \usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+\usepackage{subcaption}
 \usepackage{booktabs} % Horizontal rules in tables
 \usepackage{relsize} % Used for making text smaller in some places
+
+
+
 
 \graphicspath{{figures/}} % Directory in which figures are stored
 
@@ -30,8 +34,9 @@
 \definecolor{headercol1}{RGB}{186,215,230} % Background color for the header in the content boxes (left side)
 \definecolor{headercol2}{RGB}{80,0,80} % Background color for the header in the content boxes (right side)
 \definecolor{headerfontcol}{RGB}{0,0,0} % Text color for the header text in the content boxes
-\definecolor{boxcolor}{RGB}{186,215,230} % Background color for the content in the content boxes
+\definecolor{boxcolor}{rgb}{1.0,1.0,1.0} % Background color for the content in the content boxes
 
+\newcommand{\doop}{do}
 
 
 \begin{document}
@@ -64,16 +69,16 @@ boxshade=plain
 %----------------------------------------------------------------------------------------
 %
 {\sf\bf  INFERENCE ON/IN/OF NETWORKS \\ {\small Research of the Statistics \& Probability Unit, Groningen, NL}} % Poster title
-{\vspace{1em} P. Behrouzi, S. Mahmoudi, F. Richter, M. Kamalabad, M. Signorelli, E. Wit \\ % Author names
-{\footnotesize p.behrouzi@rug.nl, s.m.mahmoudi@rug.nl, f.richter@rug.nl, m.shafiee.kamalabad@rug.nl, m.signorelli@rug.nl, e.c.wit@rug.nl}} % Author email addresses
-{\includegraphics[scale=0.7]{logo.eps}} % University/lab logo
+{\vspace{1em} P. Behrouzi, S. Mahmoudi, F. Richter, M. shafiee Kamalabad, M. Signorelli, M.Grzegorczyk, E. Wit \\ % Author names
+{\footnotesize p.behrouzi@rug.nl, s.m.mahmoudi@rug.nl, f.richter@rug.nl, m.shafiee.kamalabad@rug.nl, m.signorelli@rug.nl,m.a.grzegorczyk@rug.nl, e.c.wit@rug.nl}} % Author email addresses
+{\includegraphics[scale=0.5]{logo.eps}} % University/lab logo
 
 %----------------------------------------------------------------------------------------
 %	INTRODUCTION
 %----------------------------------------------------------------------------------------
 
 \headerbox{Introduction}{name=introduction,column=0,row=0, span = 1 }{
-
+{\footnotesize
 At the turn of the 21st century scientists have come to realise that a major ingredient in many modern economic, epidemiological, ecological and biological questions is to understand the {\bf network structure} of the entities they study. Unfortunately, computational bottle-necks have meant that only the simplest analyses have been applied to these large datasets, whereas methodological bottle-necks prevented an integrative view of complex phenomena. 
 
 Rather than simplifying the methodology prior to seeing the data, modern techniques from {\bf high-dimensional inference} allow the data to select the appropriate level of complexity. The aim of this project is to apply these techniques to the field of network analysis. 
@@ -88,26 +93,12 @@ We approach networks from three different angles: \vspace{-0.2cm}
 \vspace{-0.2cm}
 {\bf Our aim is to develop theoretically sound network inference techniques based on penalized inference}. In each of these areas, the challenge is to define a sufficiently complex network models for large systems that have computationally tractable inference procedures. 
 }
-
+}
 %----------------------------------------------------------------------------------------
 %	MATERIALS AND METHODS
 %----------------------------------------------------------------------------------------
 
-\headerbox{Box 1}{name=box1,column=0,span = 2, below=introduction,span = 1}{
 
-\begin{description}
-\item[ER1] Sed a orci non ipsum posuere placerat. Nunc in mi augue, a adipiscing massa. Donec dapibus gravida odio, condimentum convallis urna.\item[ER2] Nullam sagittis cursus neque, sit amet mollis elit auctor in. Etiam sed lectus a nulla rhoncus interdum a tempus nunc. Sed at eleifend purus.
-\end{description}
-
-Nullam sollicitudin lobortis urna quis varius. Nullam sagittis blandit diam, $DN = G_t(V_t,E_t)$, risus $E_t \subseteq V_t \times V_t$ ($\forall t \geq 0$). vel tortor justo, $G_0$, quis malesuada lorem.
-
-\begin{equation}
-\cos^3 \theta =\frac{1}{4}\cos\theta+\frac{3}{4}\cos 3\theta
-\label{eq:refname}
-\end{equation}
-
-Vivamus porta lacus et lectus \textbf{porta lacus}. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis. torte $G_t$ hac millis \textbf{plates} Idk 
-}
 
 %----------------------------------------------------------------------------------------
 %	CONCLUSION
@@ -172,56 +163,132 @@ Reduced graphs displaying relations between communities can provide a synthetic 
 %	RESULTS 1
 %----------------------------------------------------------------------------------------
 
-\headerbox{Box 3}{name=box3,column=0,row=0,below=box1, span = 1}{ % To reduce this block to 1 column width, remove 'span=2'
+\headerbox{A general species diversification model}{name=box3,column=0,row=0,below=introduction, span = 1}{ % To reduce this block to 1 column width, remove 'span=2'
 
-Nunc sit amet sem ut nulla tincidunt mattis vel nec mauris. Vestibulum odio tellus, lobortis. Vel adipiscing, Aliquam dictum, ligula egestas commodo posuere, lectus lectus congue ligula, sed posuere urna lectus at nisi. Aenean commodo risus ut dolor (viverra scelerisque). Nullam varius, lacus et interdum hendrerit, odio orci ultrices mauris, id interdum eros mauris at urna. Fusce in nisi eros, sit amet volutpat turpis, \textbf{porttior magna} (commodo blandit euismod) \textbf{facilisis ornate magnis} (dis magnis). 
+\textbf{Background:} %The mechanisms that control the diversification of species are poorly understood. 
+In the last decades sophisticated diversification models
+have been developed, but they perform on a case-by-case basis. We
+propose a general speciation model with potentially many covariates in
+order to consider ecological interactions.\\
+\textbf{Challenges:}\\ 
 
-%------------------------------------------------
+\begin{itemize}
+\vspace{-0.7cm}
+\item Decay and fossilization degrade crucial evidence
+\vspace{-0.25cm}	\item Diversification processes have many potential explanatory variables
+\end{itemize}
+\vspace{-0.35cm}
+\textbf{Methods:}
 
+\vspace{-0.4cm}
+%\begin{minipage}{.5\textwidth}
+\begin{itemize}
+\item %The fact that we typically only have data on currently existing species is described as a missing data problem. Thus, we propose an 
+We performs an EM algorithm including a monte carlo simulation in the E-step for the reconstruction of trees. (see figure)
+\vspace{-0.35cm}
+\item We embed a differential geometric path finding method (DgLars) inside the M-step of the EM algorithm. This will produce a sparse, computationally feasible and consistent model selection procedure.  
+\end{itemize}
+%\end{minipage}
+%\begin{minipage}{.5\textwidth}
+\vspace{-0.7cm}
 \begin{center}
-\begin{tabular}{l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\captionof{table}{Table caption}
-\end{center}
+                \includegraphics[width=0.6\linewidth]{figures/fco.png}
+                   \captionof{figure}{{\small Loss of information on phylogenetic trees. At the left we have a tree with all species whereas the right plot shows the same tree with only observable species.} }
+				\end{center}
+%\end{minipage}
+\vspace{-0.45cm}
+\textbf{Conclusions:} With this general approach we are able to analyze and solve a wide variety of ecological problems including ecological interactions between species, geographical and spatial components, protracted and multiple speciation, migrations among many others.\\  
+\textbf{Contact: } Francisco Richter, f.richter@rug.nl
 }
 
+
+\headerbox{Causal effect in network}{name=box1,column=0,row=0, below=box3 , span = 1}{ % To reduce this block to 1 column width, remove 'span=2'
+
+ \textbf{Motivation:}\
+ Can we learn causal effects from observational data in
+high-dimensional systems?
+
+%------------------------------------------------
+ \textbf{ Nonparanormal distribution}
+\begin{itemize}
+\item $f=F^{-1}\circ \Phi$   monotone univariate function
+ \item$f(Y)=(f_1(Y_1),...,f_{p}(Y_{p}))^{T}\sim N(0,\Sigma) $ and
+$Y=(Y_1,...,Y_p)^{T}$ has a nonparanormal distribution
+\end{itemize}
+  \textbf{Causal Effect for Nonparanormal Graphical Models }
+
+ 
+ We are interested in the causal effect of $Y_i$ on $ Y_p$ for $i\in (1,...,p-1)$
+ \begin{itemize}
+\item Gaussian distribution: $E(Y_p|Y_i=y_i,pa_i)=\beta_0+\beta_i y_i+\beta_{pa_i}^T pa_i$
+\begin{eqnarray*}
+{\frac{\partial}{\partial y_i}} E[Y_p|\doop(Y_i = y_i)]\equiv\beta_i
+\end{eqnarray*} 
+\item  Non-Gaussian distribution
+\begin{eqnarray*}
+{\frac{\partial}{\partial y_i}} E[Y_p|\doop(Y_i = y_i)] &\cong &  f^{'}_p(z_{0j})\delta_i (f_i^{-1})^ {'}(y_i) \nonumber\\
+&=& f_p^{'}(z_{0i})\beta_i (f_j^{-1})^ {'}(y_i)
+\end{eqnarray*}
+%where $z_{0i}=(f_i^{-1})(y_i)$ and $\beta _i $ is the regression  cofficent of $Z_i$ and $pa_i$ on $Z_p$.
+\end{itemize}
+\vspace{-.5cm}
+\hspace{1cm}\includegraphics[scale=0.2]{mahmodi1}
+\captionof{figure}{ Dashed lines are quantile profile for the functional causal effect(shown here with solid black line) of $Y_i$ on $ Y_p$. Red line show true causal effect. }
+ \textbf{Conclusion: }
+We have derived an explicit formula for describing a causal effect for Nonparanormal distribution.\\
+\textbf{Contact: }Seyed Mahdi Mahmoudi, s.m.mahmoudi@rug.nl
+}
 %----------------------------------------------------------------------------------------
 %	RESULTS 2
 %----------------------------------------------------------------------------------------
 
-\headerbox{Box 4}{name=box4,column=1,below=box2, span = 1}{ % To reduce this block to 1 column width, remove 'span=2'
+\headerbox{New Partially sequentially coupled model}{name=box4,column=1,below=box2, span = 1}{ % To reduce this block to 1 column width, remove 'span=2'
 
-Nunc sit amet sem ut nulla tincidunt mattis vel nec mauris. Vestibulum odio tellus, lobortis. Vel adipiscing, Aliquam dictum, ligula egestas commodo posuere, lectus lectus congue ligula, sed posuere urna lectus at nisi. 
-
-%------------------------------------------------
-
-\begin{center}
-\includegraphics[width=0.2\linewidth]{placeholder}
-\includegraphics[width=0.2\linewidth]{placeholder}
-\captionof{figure}{Figure caption 1 (left); Figure caption 2 (right)}
-\end{center}
-
-%------------------------------------------------
-
-Aliquam ac justo lectus. Nunc ultrices aliquet purus non dictum. Nulla facilisi. Quisque vitae urna non purus sollicitudin venenatis. Aliquam erat volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In hendrerit tortor sed massa consequat eu viverra justo porta. Ut nec felis sem, non elementum.
-
-%------------------------------------------------
-
+\section*{\normalsize{Aim of our study}}
+\vspace{-0.3cm}
+Learning the network structure from an n-by-m data matrix (Inference of gene regulatory networks from short non-stationary time series of transcriptional profiles).
+\vspace{-0.5cm}
+%\color{DarkSlateGray} % DarkSlateGray color for the rest of the content
+\section*{\normalsize{Popular approaches}}
+\vspace{-0.3cm}
+\begin{enumerate}
+\item{\normalsize{ Dynamic Bayesian Networks}} (DBNs)
+\vspace{-.3cm}
+\item{\normalsize{ Non-homogeneous DBN model}}\\
+DBNs + changepoints. Network parameters change over time.
+\vspace{-.4cm}
 %\begin{center}
-%\includegraphics[width=0.8\linewidth]{placeholder}
-%\captionof{figure}{Figure caption}
+%\includegraphics[width=0.8\linewidth]{net-parameter}
 %\end{center}
-
-%------------------------------------------------
-
-%Nunc sit amet sem ut nulla tincidunt mattis vel nec mauris. Vestibulum odio tellus, lobortis. Vel adipiscing, Aliquam dictum, ligula egestas commodo posuere, lectus lectus congue ligula, sed posuere urna lectus at nisi. Aenean commodo risus ut dolor (viverra scelerisque). Nullam varius, lacus et interdum hendrerit, odio orci ultrices mauris, id interdum eros mauris at urna. Fusce in nisi eros, sit amet volutpat turpis, \textbf{porttior magna} (commodo blandit euismod) \textbf{facilisis ornate magnis} (dis magnis). Aliquam ac justo lectus. Nunc ultrices aliquet purus non dictum. Nulla facilisi. Quisque vitae urna non purus sollicitudin venenatis. Aliquam erat volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In hendrerit tortor sed massa consequat eu viverra justo porta. Ut nec felis sem, non elementum.
+\end{enumerate}
+\begin{itemize}
+\item {\normalsize{ Non-homogeneous DBN uncoupled model}}\\
+\vspace{-0.2cm}
+%\begin{center}
+%\includegraphics[width=0.8\linewidth]{uncouple}
+%\end{center}
+\vspace{-0.5cm}
+\item {\normalsize{ Non-homogeneous DBN coupled model}}\small{(Grzegorczyk et al. (2012))}
+%\begin{center}
+%\includegraphics[width=0.8\linewidth]{changepoint4}
+%\end{center}
+%\vspace{-.1cm}
+%(-): All neighbouring segments are coupled with the same coupling strength  between segments. 
+\end{itemize}
+\vspace{-.8cm}
+\section*{\normalsize{New approach (\normalsize{New partially sequentially coupled model)}}}
+\vspace{-0.4cm}
+\begin{center}
+\includegraphics[width=0.75\linewidth]{changepoint5}
+\end{center}
+\vspace{-.5cm}
+\captionof{figure}{\small{New model infers whether each segment is coupled to (or uncoupled from) the preceding one by defining a Bernoulli distributed variable $v_{h}$.$v_{h}=1$ when segment $h$ is coupled to sehment $h-1$ and $v_{h}=0$ otherwise.}
+}
+\vspace{-.5cm}
+\section*{\normalsize{Conclusions}}
+\vspace{-.4cm}
+The new model is a promising consensus model between the standard uncoupled NH-DBN and the fully sequentially coupled NH-DBN. It infers correctly from the data whether network parameters are coupled or not and performs significantly better than the two competing NH-DBNs for partially coupled data.\\
+{\bf CONTACT:} Mahdi shafiee, {\bf EMAIL:}m.shafiee.kamalabad@rug.nl.
 }
 
 %----------------------------------------------------------------------------------------
