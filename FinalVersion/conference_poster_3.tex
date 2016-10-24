@@ -1,0 +1,280 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% baposter Portrait Poster
+% LaTeX Template
+% Version 1.0 (15/5/13)
+%
+% Created by:
+% Brian Amberg (baposter@brian-amberg.de)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[a0paper,portrait]{baposter}
+
+\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+\usepackage{subcaption}
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{relsize} % Used for making text smaller in some places
+
+
+
+
+\graphicspath{{figures/}} % Directory in which figures are stored
+
+\definecolor{bordercol}{RGB}{40,40,40} % Border color of content boxes
+\definecolor{headercol1}{RGB}{186,215,230} % Background color for the header in the content boxes (left side)
+\definecolor{headercol2}{RGB}{80,0,80} % Background color for the header in the content boxes (right side)
+\definecolor{headerfontcol}{RGB}{0,0,0} % Text color for the header text in the content boxes
+\definecolor{boxcolor}{rgb}{1.0,1.0,1.0} % Background color for the content in the content boxes
+
+\newcommand{\doop}{do}
+
+
+\begin{document}
+
+\background{ % Set the background to an image (background.pdf)
+\begin{tikzpicture}[remember picture,overlay]
+\draw (current page.north west)+(-2em,2em) node[anchor=north west]
+{\includegraphics[height=1.1\textheight]{background}};
+\end{tikzpicture}
+}
+
+\begin{poster}{
+grid=false,
+borderColor=bordercol, % Border color of content boxes
+headerColorOne=headercol1, % Background color for the header in the content boxes (left side)
+headerColorTwo=headercol2, % Background color for the header in the content boxes (right side)
+headerFontColor=headerfontcol, % Text color for the header text in the content boxes
+boxColorOne=boxcolor, % Background color for the content in the content boxes
+headershape=roundedright, % Specify the rounded corner in the content box headers
+headerfont=\Large\sf\bf, % Font modifiers for the text in the content box headers
+textborder=rectangle,
+background=user,
+headerborder=open, % Change to closed for a line under the content box headers
+boxshade=plain
+}
+{}
+%
+%----------------------------------------------------------------------------------------
+%	TITLE AND AUTHOR NAME
+%----------------------------------------------------------------------------------------
+%
+{\sf\bf  INFERENCE ON/IN/OF NETWORKS \\ {\small Research of the Statistics \& Probability Unit, Groningen, NL}} % Poster title
+{\vspace{1em} P. Behrouzi, S. Mahmoudi, F. Richter, M. Shafiee , M. Signorelli, M.Grzegorczyk, E. Wit \\ % Author names
+{\footnotesize p.behrouzi@rug.nl, s.m.mahmoudi@rug.nl, f.richter@rug.nl, m.shafiee.kamalabad@rug.nl, m.signorelli@rug.nl,m.a.grzegorczyk@rug.nl, e.c.wit@rug.nl}} % Author email addresses
+{\includegraphics[scale=0.5]{logo.eps}} % University/lab logo
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+\headerbox{Introduction}{name=introduction,column=0,row=0, span = 2 }{
+{\footnotesize
+At the turn of the 21st century scientists have come to realise that a major ingredient in many modern economic, epidemiological, ecological and biological questions is to understand the {\bf network structure} of the entities they study. Unfortunately, computational bottle-necks have meant that only the simplest analyses have been applied to these large datasets, whereas methodological bottle-necks prevented an integrative view of complex phenomena. 
+
+Rather than simplifying the methodology prior to seeing the data, modern techniques from {\bf high-dimensional inference} allow the data to select the appropriate level of complexity. The aim of this project is to apply these techniques to the field of network analysis. 
+
+We approach networks from three different angles: \vspace{-0.2cm}
+\begin{enumerate}
+\itemsep-3pt
+\item high-dimensional graphical models, including causal models, 
+\item ordinary and stochastic differential equations 
+\item random network models, such as stochastic blockmodels and ERGMs.
+\end{enumerate}
+\vspace{-0.2cm}
+{\bf Our aim is to develop theoretically sound network inference techniques based on penalized inference}. In each of these areas, the challenge is to define a sufficiently complex network models for large systems that have computationally tractable inference procedures. 
+}
+}
+%----------------------------------------------------------------------------------------
+%	MATERIALS AND METHODS
+%----------------------------------------------------------------------------------------
+
+
+
+%----------------------------------------------------------------------------------------
+%	CONCLUSION
+%----------------------------------------------------------------------------------------
+
+\headerbox{Simplification of complex networks}{name=box2,column=1,span = 1,below=introduction}{
+	
+	\textbf{RESEARCH QUESTION:} large networks challenge our capacities to visualize and interpret them. Often, one can exploit information on communities to derive a reduced graph summarizing relations between them.
+	
+	\vspace{0.1cm}
+	\textbf{EXAMPLES:}\\\vspace{-0.65cm}
+	\begin{enumerate}
+		\itemsep-3pt
+		\item use ontologies/pathways to summarize gene regulatory networks;
+		\item groups of individuals in social networks \small{(e.g., parties in a Parliament)}.
+	\end{enumerate}\vspace{-0.1cm}
+	\textbf{METHODS:}\\\vspace{-0.65cm}
+	\begin{enumerate}
+		\itemsep-3pt
+		\item significance test based on number of links between communities: implemented in \texttt{R} package \texttt{neat} ($\rightarrow$ \textit{arXiv:1604.01210});
+		\item penalized stochastic blockmodels ($\rightarrow$ \textit{arXiv:1607.08743}).
+	\end{enumerate}
+	\begin{center}
+		\includegraphics[width=0.4\linewidth, page=1, trim=0cm 3cm 0cm 3cm]{example-mirko.pdf}
+		\includegraphics[width=0.4\linewidth, page=2, trim=0cm 3cm 0cm 3cm]{example-mirko.pdf}
+		\captionof{figure}{We develop statistical methods that allow to summarize relations between communities in large graphs (left) with a reduced graph (right).}
+	\end{center}
+	\vspace{-0.3cm}
+	\textbf{CONCLUSION:} reduced graphs displaying relations between communities can provide a synthetic and meaningful insight on complex networks.
+	
+	\vspace{0.1cm}
+	\textbf{CONTACT:} Mirko Signorelli, m.signorelli@rug.nl.
+}
+
+
+%----------------------------------------------------------------------------------------
+%	REFERENCES
+%----------------------------------------------------------------------------------------
+
+%\headerbox{References}{name=references,column=0,below=conclusion}{
+%
+%\smaller % Reduce the font size in this block
+%\renewcommand{\section}[2]{\vskip 0.05em} % Get rid of the default "References" section title
+%\nocite{*} % Insert publications even if they are not cited in the poster
+%
+%\bibliographystyle{unsrt}
+%\bibliography{sample} % Use sample.bib as the bibliography file
+%}
+%
+%%----------------------------------------------------------------------------------------
+%%	ACKNOWLEDGEMENTS
+%%----------------------------------------------------------------------------------------
+%
+%\headerbox{Acknowledgements}{name=acknowledgements,column=0,below=references, above=bottom}{
+%
+%\smaller % Reduce the font size in this block
+%Fusce mattis tellus ac odio imperdiet lobortis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus commodo blandit euismod. Ut porttitor cursus magna. Mauris adipiscing pellentesque ipsum nec facilisis. Cras ornare bibendum bibendum. Ut a elit purus, vel adipiscing.
+%} 
+
+%----------------------------------------------------------------------------------------
+%	RESULTS 1
+%----------------------------------------------------------------------------------------
+
+\headerbox{A general species diversification model}{name=box3,column=0,row=0,below=introduction, span = 1}{ % To reduce this block to 1 column width, remove 'span=2'
+
+\textbf{Background:} %The mechanisms that control the diversification of species are poorly understood. 
+Sophisticated diversification models have been developed, but they perform on a case-by-case basis. We
+propose a general speciation model in order to consider complex ecological interactions.\\
+\textbf{Challenges:}\\ 
+
+\begin{itemize}
+\vspace{-0.7cm}
+\item Decay and fossilization degrade crucial evidence
+\vspace{-0.25cm}	\item Diversification processes have many potential explanatory variables
+\end{itemize}
+\vspace{-0.35cm}
+\textbf{Methods:}
+
+\vspace{-0.4cm}
+%\begin{minipage}{.5\textwidth}
+\begin{itemize}
+\item %The fact that we typically only have data on currently existing species is described as a missing data problem. Thus, we propose an 
+We performs an EM algorithm including a monte carlo simulation in the E-step for the reconstruction of trees. (see figure)
+\vspace{-0.35cm}
+\item We embed a differential geometric path finding method (DgLars) inside the M-step of the EM algorithm. This will produce a sparse, computationally feasible and consistent model selection procedure.  
+\end{itemize}
+%\end{minipage}
+%\begin{minipage}{.5\textwidth}
+\vspace{-0.7cm}
+\begin{center}
+                \includegraphics[width=0.6\linewidth]{figures/fco.png}
+                   \captionof{figure}{{\small Loss of information on phylogenetic trees. An example of the same tree with and without extinct species.} }
+				\end{center}
+%\end{minipage}
+\vspace{-0.45cm}
+\textbf{Conclusions:} With this general approach we are able to analyze and solve a wide variety of open problems in evolutionary biology including ecological interactions, geographical/spatial components, protracted and multiple speciation, migrations among many others.\\  
+\textbf{Contact: } Francisco Richter, f.richter@rug.nl
+}
+
+
+\headerbox{Causal effect in network}{name=box1,column=0,row=0, below=box3 , span = 1}{ % To reduce this block to 1 column width, remove 'span=2'
+
+%\headerbox{Causal effect in network}{name=box1,column=0,row=0,below=introduction, span = 1}{ % To reduce this block to 1 column width, remove 'span=2'
+
+ \textbf{Motivation:}\
+ Can we learn causal effects from observational data in
+high-dimensional systems?
+
+%------------------------------------------------
+ \textbf{ Nonparanormal distribution}
+ \vspace{-.2cm}
+\begin{itemize}
+\item $f=F^{-1}\circ \Phi$   monotone univariate function
+ \item$f(Y)=(f_1(Y_1),...,f_{p}(Y_{p}))^{T}\sim N(0,\Sigma) $ and
+$Y=(Y_1,...,Y_p)^{T}$ has a nonparanormal distribution
+\vspace{-0.3cm}
+\end{itemize}
+  \textbf{Causal Effect for Nonparanormal Graphical Models }\\
+ We are interested in the causal effect of $Y_i$ on $ Y_p$ for $i\in (1,...,p-1)$
+ \begin{itemize}
+\item Gaussian distribution: ~~~${\frac{\partial}{\partial y_i}} E[Y_p|\doop(Y_i = y_i)]\equiv\beta_i$
+\item  Non-Gaussian distribution
+\vspace{-.26cm}
+\begin{eqnarray*}
+{\frac{\partial}{\partial y_i}} E[Y_p|\doop(Y_i = y_i)] &\cong &f_p^{'}(z_{0i})\beta_i (f_j^{-1})^ {'}(y_i) \nonumber
+\end{eqnarray*}
+%where $z_{0i}=(f_i^{-1})(y_i)$ and $\beta _i $ is the regression  cofficent of $Z_i$ and $pa_i$ on $Z_p$.
+\end{itemize}
+\vspace{-.5cm}
+\hspace{1.5cm}\includegraphics[scale=0.2]{mahmodi1}
+\vspace{-.3cm}
+\captionof{figure}{ Dashed lines are quantile profile for the functional causal effect(shown here with solid black line) of $Y_i$ on $ Y_p$. Red line show true causal effect. }
+ \textbf{Conclusion: }
+We have derived an explicit formula for describing a causal effect for Nonparanormal distribution.\\
+\textbf{Contact: }Seyed Mahdi Mahmoudi, s.m.mahmoudi@rug.nl
+}
+
+%----------------------------------------------------------------------------------------
+%	RESULTS 2
+%----------------------------------------------------------------------------------------
+
+\headerbox{Inference of complex networks}{name=box4,column=1,below=box2, span = 1}{ % To reduce this block to 1 column width, remove 'span=2'
+
+\textbf{Background:} In crossing two parents in plants/animals, certain combinations of genomic regions of parents do not function well when brought together in the genome of the offspring, thus resulting in sterility, low fertility, or even complete lethality. 
+ 
+\vspace{0.15cm}
+\textbf{Aim:} Detecting genomic regions that result disorders in offspring.
+
+\vspace{0.15cm}
+\textbf{Challenges:}
+\vspace{-0.3cm}
+\begin{itemize}
+\item Dealing with high-dimensional setting ($p >> n$);
+\vspace{-0.3cm}
+\item Reconstructing conditional independence graph for ordinal data.
+\vspace{-0.3cm}
+\item Traditional approach, multiple testing, is under-powered.
+\end{itemize}
+\vspace{-0.1cm} 
+\textbf{Method:} The network estimation relies on penalized Gaussian copula graphical models which is implemented in  \texttt{R} package \texttt{EpiMultiLoc}. 
+\vspace{0.3cm}
+\begin{center}
+	\includegraphics[width=0.35\textwidth]{image1-Pariya.png} \hspace{0.5cm}
+	\includegraphics[width=0.36\textwidth]{image2_Pariya.png}
+	\vspace{0.3cm}
+	\captionof{figure}{We discovered two regions in Arabidopsis that interact epistatically, which had prior been shown to cause arrested embryo development and root growth impairments. We discovered a few other trans-chromosomal interactions.}
+\end{center}
+\vspace{-0.2cm}
+\textbf{Conclusion:} We developed a novel statistical method to explore aberrant marker-marker interactions in any diploid and polyploid genome.
+
+\vspace{0.1cm}
+\textbf{Contact:} Pariya Behrouzi, p.behrouzi@rug.nl.
+}
+
+%----------------------------------------------------------------------------------------
+
+\end{poster}
+
+\end{document}
